@@ -50,12 +50,6 @@ namespace TransactionMiddlewareSample.Middlewares
 
                 transaction.Commit();
             }
-            catch (Exception)
-            {
-                transaction?.Rollback();
-
-                throw;
-            }
             finally
             {
                 transaction?.Dispose();
